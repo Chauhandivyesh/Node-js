@@ -1,0 +1,152 @@
+SQL Commands
+
+DDL : Data Defination Language
+ -CREATE,ALTER,DROP,TRUNCATE
+
+DML : Data Manipulation Language
+ -INSERT,UPDATE,DELETE
+
+DQL : Data Query Language
+ -SELECT
+
+DCL : Data Control Language 
+ -GRANT,REVOKE
+
+============================================================
+
+SQL Constraints:
+
+PRIMARY KEY
+UNIQUE KEY
+FORIEGN KEY
+NOT NULL
+
+--------------------------------------------------
+How to apply foreign key 
+
+CREATE TABLE orders(  
+  oid INT,  
+  cid INT,  
+  Customer_Info varchar(50) NOT NULL,  
+  Type varchar(50) NOT NULL,  
+  INDEX par_ind (cid),  
+  FOREIGN KEY (cid)  
+  REFERENCES customer(ID)  
+  ON DELETE CASCADE  
+  ON UPDATE CASCADE  
+);
+
+===========================================================
+>>How to create Database ? 
+	Syntax : create database database_name;
+	
+>>How to show available databases?
+	Syantax : show databases;
+
+>>How to remove database ?
+	Syntax : drop database database_name;
+
+>>How to select db?
+	Syntax: use database_name;
+================================================================
+
+CREATE : to create new view,db,table 
+
+>>to create table 
+
+	Syntax :  create table table_name(col1 type,col2 type,..,coln type);
+
+>>to describe table
+	Syntax : DESC table_name;
+
+
+ALTER:
+
+	Syntax : alter table table_name {ADD/DROP/MODIFY} col_name type;
+
+	>>change column name:
+	Syntax : alter table table_name rename column old_name to new_name;
+
+	>>change table name:
+	Syntax : alter table table_name rename to new_name;
+
+
+TRUNCATE: to remove all the records from table but table still exist
+Syntax : truncate table table_name;
+
+DROP: to remove the whole table from database
+Syntax :  drop table table_name;
+
+=========================================================================================
+DML : Data Manipulation Language 
+
+INSERT : to add new data into table 
+
+	Syntax : insert into table_name(col1,col2,..,coln) values(val1,val2,...,valn);
+
+UPDATE : to update data into table
+
+	Syntax : update table_name set col=val where condition;
+
+DELETE : to delete data from table 
+
+	Syntax : delete from table where condition;
+
+===============================================================================================
+
+
+DQL : data Query Language
+
+	SELECT:
+
+	Synatx: select col_name from table_name;
+	
+	or
+
+	Synatx : select * from table_name; (to fetch all columns)
+
+
+	>>to fetch data condition vise
+	Syntax : select * from table_name where condition;
+
+	
+	DISTINCT:use to fetch only unique column values
+	Synatx : select DISTINCT col_name from table_name;
+
+	AND : 
+	Syntax : select * from table_name where condiotion1 and condition2;
+
+	OR:
+	Syntax : select * from table_name where condiotion1 or condition2;
+
+	BETWEEN: use to find range of data
+	Syntax : select * from table_name where col between limi1 and limit2;
+
+	like : use to find pattern from table
+	Syntax : select * from table_name where col_name like'pattern';
+
+	oder by:to sort data in acsending or decsending order
+	Syntax: select * from table_name order by col_name ASC;
+	Syntax: select * from table_name order by col_name DESC;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
