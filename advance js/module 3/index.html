@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Manager</title>
+</head>
+<body>
+  <script>
+    function hidePassword() {
+      var passwordInput = document.getElementById("password");
+      passwordInput.type = "password";
+    }
+
+    function showPassword() {
+      var passwordInput = document.getElementById("password");
+      passwordInput.type = "text";
+    }
+  </script>
+  <h1>Create a program to hide/show the password</h1>
+  <label for="password">Password:</label>
+  <input type="password" id="password">
+  <br><br>
+  <button onclick="hidePassword()">Hide Password</button>
+  <button onclick="showPassword()">Show Password</button>
+</body>
+</html>

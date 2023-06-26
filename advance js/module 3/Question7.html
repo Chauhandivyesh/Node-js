@@ -1,0 +1,40 @@
+● Prevent the browser when i click the form submit button
+
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault(); // Prevent the default form submission
+      
+      // Add your custom logic here
+      
+      // Optional: You can perform additional actions or submit the form via AJAX
+      
+      // Example: AJAX form submission using jQuery
+      /*
+      $.ajax({
+        url: "your-submit-url",
+        type: "POST",
+        data: $(event.target).serialize(), // Serialize form data
+        success: function(response) {
+          // Handle success response
+        },
+        error: function(error) {
+          // Handle error response
+        }
+      });
+      */
+    }
+  </script>
+</head>
+<body>
+  <form onsubmit="handleSubmit(event)">
+    <!-- Your form fields here -->
+    <input type="text" name="name" placeholder="Name">
+    <input type="email" name="email" placeholder="Email">
+    
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>

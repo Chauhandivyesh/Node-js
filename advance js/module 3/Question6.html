@@ -1,0 +1,87 @@
+● Use external js library to show slider
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <style>
+    /* CSS for the modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+    
+    .modal-content {
+      background-color: #fefefe;
+      padding: 20px 20px;
+      border: 1px solid #888;
+      width: 100%;
+      /* max-width: 500px; */
+    }
+    
+    .slider {
+      margin: 20px 20px;
+    }
+    
+    .slide img {
+      max-width: 0 auto;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="openModal()">Open Modal</button>
+  
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <h2>Modal Box</h2>
+      <div class="slider">
+        <div class="slide">
+          <img src="./img/Bestseller.jpg" alt="Image 1">
+        </div>
+        <div class="slide">
+          <img src="../Node/img/Drinks.jpg" alt="Image 2">
+        </div>
+        <div class="slide">
+          <img src="./img/Merchandise.jpg" alt="Image 3">
+        </div>
+      </div>
+      
+      <div class="modal-buttons">
+        <button onclick="closeModal()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script>
+    // JavaScript for handling modal open and close
+    var modal = document.getElementById("myModal");
+
+    function openModal() {
+      modal.style.display = "block";
+      $('.slider').slick({
+        // Slick carousel options
+        dots: true,
+        arrows: true,
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 2000,
+      });
+    }
+
+    function closeModal() {
+      modal.style.display = "none";
+      $('.slider').slick('unslick');
+    }
+  </script>
+</body>
+</html>

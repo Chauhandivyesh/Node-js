@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>Responsive Header
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        header {
+    background-color: #333;
+    padding: 20px;
+    color: #fff;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo img {
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    display: flex;
+    width: 100px;
+  }
+  
+  .nav-links {
+    display: flex;
+  }
+  
+  .nav-links li {
+    list-style: none;
+    margin-right: 40px;
+  }
+  
+  .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+  }
+  
+  .burger {
+    display: none;
+    cursor: pointer;
+  }
+  
+  .burger .line {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin-bottom: 5px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .nav-links {
+      display: none;
+    }
+  
+    .nav-links.active {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .nav-links.active li {
+      opacity: 0;
+      animation: fadeIn 0.5s ease forwards;
+    }
+  
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  
+    .burger {
+      display: block;
+    }
+  }
+  
+    </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+        <img src="./Starbucks-logo.png" alt="" srcset="">
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <div class="burger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+    </nav>
+  </header>
+
+  <script src="script.js">
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.nav-links');
+
+    burger.addEventListener('click', () => {
+    nav.classList.toggle('active');
+    });
+
+  </script>
+</body>
+</html>
